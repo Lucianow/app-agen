@@ -18,7 +18,7 @@ class ServiceCategoryController extends Controller
 
     public function show($id)
     {
-        $result = DB::table('ServiceCategoryController.php')->where('id', $id)->first();
+        $result = DB::table('wp_latepoint_service_categories')->where('id', $id)->first();
         return view('serviceCategory')->with(compact('result'));
     }
 
@@ -31,11 +31,11 @@ class ServiceCategoryController extends Controller
 
     public function store(Request $request)
     {
-        DB::table('wp_latepoint_services')->insertGetId( [
+        DB::table('wp_latepoint_service_categories')->insertGetId( [
             "name" => $request->name  ,
             "short_description" => $request->short_description  ,
             "parent_id" => $request->parent_id  ,
-            "section_image_id" => $request->section_image_id  ,
+            "selection_image_id" => $request->selection_image_id  ,
             "order_number" => $request->order_number  ,
             "created_at" => $request->created_at  ,
             "updated_at" => $request->updated_at
@@ -47,11 +47,11 @@ class ServiceCategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        DB::table('wp_latepoint_customers')->where('id', $id)->update( [
+        DB::table('wp_latepoint_service_categories')->where('id', $id)->update( [
             "name" => $request->name  ,
             "short_description" => $request->short_description  ,
             "parent_id" => $request->parent_id  ,
-            "section_image_id" => $request->section_image_id  ,
+            "selection_image_id" => $request->selection_image_id  ,
             "order_number" => $request->order_number  ,
             "created_at" => $request->created_at  ,
             "updated_at" => $request->updated_at

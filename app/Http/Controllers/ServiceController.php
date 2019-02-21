@@ -56,7 +56,7 @@ class ServiceController extends Controller
 
     public function update(Request $request, $id)
     {
-        DB::table('wp_latepoint_customers')->where('id', $id)->update( [
+        DB::table('wp_latepoint_services')->where('id', $id)->update( [
             "name" => $request->name  ,
             "short_description" => $request->short_description  ,
             "is_price_variable" => $request->is_price_variable  ,
