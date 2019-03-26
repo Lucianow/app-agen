@@ -11,6 +11,7 @@ class BookingController extends Controller
     {
         $result = DB::table('wp_latepoint_bookings')->orderBy('id')->get();
         return view('booking')->with(compact('result'));
+
     }
 
     public function show($id)
